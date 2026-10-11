@@ -332,18 +332,10 @@ function addInterval(callback, delay) {
   return id;
 }
 
+
 function getReconnectDelay() {
-  // Aggressive reconnection: fast, flat delay or very subtle backoff
-  const baseDelay = config.utils['auto-reconnect-delay'] || 2000;
-  const maxDelay = config.utils['max-reconnect-delay'] || 15000;
-
-  // Use a much gentler backoff or just a flat delay if user wants "lower"
-  // Current logic: attempts * 1000 + base, capped at max
-  const delay = Math.min(baseDelay + (botState.reconnectAttempts * 1000), maxDelay);
-
-  return delay;
+  return 65000;
 }
-
 function createBot() {
   if (isReconnecting) {
     console.log('[Bot] Already reconnecting, skipping...');
