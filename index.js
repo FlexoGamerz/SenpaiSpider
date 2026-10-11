@@ -390,21 +390,6 @@ function createBot() {
 
   // 🔐 FORCE LOGIN SYSTEM (Perzaan Edition)
 
-      bot.on('messagestr', (msg) => {
-  const message = msg.toLowerCase();
-
-  // Login
-  if (message.includes('login')) {
-    bot.chat('/login Perzuu');
-    console.log('[Auth] Login detected');
-  }
-
-  // Register
-  if (message.includes('register')) {
-    bot.chat('/register Perzuu Perzuu');
-    console.log('[Auth] Register detected');
-  }
-
   // Creative mode success
   if (
     message.includes('commands.gamemode.success.self') ||
